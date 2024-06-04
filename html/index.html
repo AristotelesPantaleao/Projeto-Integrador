@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Bem Vindo</h1>
+            <form id="formulario">
+                <div class="form-group">
+                    <label for="usuarioValido">Usuário</label>
+                    <input type="text" class="form-control" id="usuarioValido" placeholder="Usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="senhaValida">Senha</label>
+                    <input type="password" class="form-control" id="senhaValida" placeholder="Senha" required>
+                </div>
+                <div class="container-botao">
+                    <div class="col-6">
+                        <form>
+                            <input class="btn btn-primary" id="botao" type="submit" value="Login" />
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action="telaDeCadastro.html">
+                            <input class="btn btn-danger" id="botao5" type="submit" value="Cadastro" />
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
