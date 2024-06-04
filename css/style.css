@@ -1,0 +1,96 @@
+#botao{
+    width: 100%;
+    margin-left: auto;
+}
+
+#botao2{
+    width: 378px;
+    font-size: 40px;
+}
+
+#botao3{
+    width: 100%;
+}
+
+#botao4{
+    width: 30%;
+    margin-left: auto;
+}
+
+#botao5{
+    width: 100%;
+    margin-left: auto;
+}
+
+.container-botao{
+    display: flex;
+}
+
+.container{
+    max-width: 400px;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-cadastro{
+    max-width: 400px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container2{
+    max-width: 900px;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container2 button{
+    font-size: 35px;
+}
+
+.container3{
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+}
+
+.container4{
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-container{
+    margin-right: 10px;
+}
+
+.container5{
+    max-width: 500px;
+}
+
+#livre{
+    background-color: green;
+    color: white;
+}
+
+#centralizar{
+    text-align: center;
+}
+
+#agendado{
+    background-color: yellow;
+    color: black;
+}
+
+#ocupado{
+    background-color: red;
+    color: white;
+}
