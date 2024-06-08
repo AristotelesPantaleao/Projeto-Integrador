@@ -38,7 +38,6 @@ formulario.addEventListener('submit', function (evento) {
   validarCadastro();
 
   if(condicaoValidacao === true){
-    alert('Login efetuado com sucesso!')
     window.location.href = 'menu.html';
   }else{
     alert('Usuário ou Senha incorreto!');

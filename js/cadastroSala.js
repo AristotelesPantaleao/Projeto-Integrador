@@ -9,6 +9,7 @@ const flexDeLousaInterativa = JSON.parse(localStorage.getItem('flexDeLousaIntera
 const flexDeMaterial = JSON.parse(localStorage.getItem('flexDeMaterial') || '[]');
 const flexDeRadioSim = JSON.parse(localStorage.getItem('flexDeRadioSim') || '[]');
 const flexDeRadioNao = JSON.parse(localStorage.getItem('flexDeRadioNao') || '[]');
+const opcoes = JSON.parse(localStorage.getItem('opcoes') || '[]');
 
 let condicaoCodigo = false, condicaoLocal = false, condicaoCapacidade = false, condicaoCoffeeBreak = false;
 
@@ -153,6 +154,18 @@ function cadastrarSala() {
     }
 }
 
+function addOpcoes() {
+    if (opcoes.length === 0) {
+        opcoes.push('Sala Livre');
+        opcoes.push('Sala Agendada');
+        opcoes.push('Sala Ocupada');
+    }
+}
+
+function salvarOpcoes() {
+    localStorage.setItem('opcoes', JSON.stringify(opcoes));
+}
+
 function salvarCodigoSala() {
     localStorage.setItem('codigoDaSala', JSON.stringify(codigoDaSala));
 }
@@ -240,6 +253,8 @@ function cadastrar() {
     salvarMaterial();
     salvarSim();
     salvarNao();
+    addOpcoes();
+    salvarOpcoes();
 }
 
 formulario.addEventListener('submit', function (evento) {

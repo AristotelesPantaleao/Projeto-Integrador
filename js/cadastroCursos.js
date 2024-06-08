@@ -2,9 +2,9 @@ const formulario = document.getElementById('formulario');
 
 const codigoDoCurso = JSON.parse(localStorage.getItem('codigoDoCurso') || '[]');
 const nomeDoCurso = JSON.parse(localStorage.getItem('nomeDoCurso') || '[]');
-const localDoCurso = JSON.parse(localStorage.getItem('localDoCurso') || '[]');
+const descricaoDoCurso = JSON.parse(localStorage.getItem('descricaoDoCurso') || '[]');
 
-let condicaoCodigo = false, condicaoNome = false, condicaoLocal = false;
+let condicaoCodigo = false, condicaoNome = false, condicaoDescricao = false;
 
 function cadastrarCurso() {
     const codigoCurso = document.getElementById('codigoCurso').value;
@@ -43,22 +43,23 @@ function cadastrarCurso() {
         document.getElementById('nomeCurso').value = '';
     }
 
-    const localCurso = document.getElementById('localCurso').value;
+    const descricaoCurso = document.getElementById('floatingTextarea2').value;
 
-    if (localCurso === '') {
-        condicaoLocal = false;
-        document.getElementById('localCurso').value = '';
-    } else {
-        condicaoLocal = true
-        document.getElementById('localCurso').value = '';
+    if(descricaoCurso === ''){
+        condicaoDescricao = false;
+        document.getElementById('floatingTextarea2').value = '';
+    }else{
+        condicaoDescricao = true;
+        document.getElementById('floatingTextarea2').value = '';
     }
 
-    if (condicaoCodigo === true && condicaoNome === true && condicaoLocal === true) {
+    if (condicaoCodigo === true && condicaoNome === true && condicaoDescricao === true) {
         codigoDoCurso.push(codigoCurso);
         nomeDoCurso.push(nomeCurso);
-        localDoCurso.push(localCurso);
+        descricaoDoCurso.push(descricaoCurso);
         alert('Cadastro efetuado com sucesso!');
     }
+
 }
 
 function salvarCodigoCurso() {
@@ -69,18 +70,18 @@ function salvarNomeCurso() {
     localStorage.setItem('nomeDoCurso', JSON.stringify(nomeDoCurso));
 }
 
-function salvarLocalCurso() {
-    localStorage.setItem('localDoCurso', JSON.stringify(localDoCurso));
+function salvarDescricaoCurso() {
+    localStorage.setItem('descricaoDoCurso', JSON.stringify(descricaoDoCurso));
 }
 
 function removerItem() {
     localStorage.removeItem('codigoDoCurso');
     localStorage.removeItem('nomeDoCurso');
-    localStorage.removeItem('localDoCurso');
+    localStorage.removeItem('descricaoDoCurso');
 
     const valorRemovido = localStorage.getItem('codigoDoCurso');
     const valorRemovido2 = localStorage.getItem('nomeDoCurso');
-    const valorRemovido3 = localStorage.getItem('localDoCurso');
+    const valorRemovido3 = localStorage.getItem('descricaoDoCurso');
 
     if (valorRemovido === null && valorRemovido2 === null && valorRemovido3 === null) {
         console.log('Item removido com sucesso!');
@@ -91,13 +92,13 @@ function removerItem() {
 
 console.log(`Código do Curso: ${codigoDoCurso}`);
 console.log(`Nome do Curso: ${nomeDoCurso}`);
-console.log(`Local do Curso: ${localDoCurso}`);
+console.log(`Descrição do Curso: ${descricaoDoCurso}`);
 
 function cadastro() {
     cadastrarCurso();
     salvarCodigoCurso();
     salvarNomeCurso();
-    salvarLocalCurso();
+    salvarDescricaoCurso();
 }
 
 formulario.addEventListener('submit', function (evento) {
