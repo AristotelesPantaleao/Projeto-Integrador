@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.min.js"></script>
-    <title>Cadastro de Turmas</title>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <title>Alocação de Salas</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="menu.html">Menu</a>
+                <a class="navbar-brand" href="../html/menu.html">Menu</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,45 +41,42 @@
         </nav>
     </header>
     <main>
-        <div class="container3">
-            <button type="button" id="botao2" class="btn btn-warning" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                Cadastro de Turmas
+        <div class="meio">
+            <button class="btn btn-warning" id="botao10" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                Realizar Cadastros
             </button>
+        </div>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro de Turmas</h1>
-                        </div>
-                        <form id="formulario">
-                            <div class="modal-body" id="modal-body">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Código da Turma:</label>
-                                    <input type="number" min="1" class="form-control" id="codigoTurma"
-                                        placeholder="Código da Turma" required>
-                                    <p id="codigoError"></p>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="staticBackdropLabel">Cadastros</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                Escolha o que você quer cadastrar.
+              </div>
+              <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Cadastro
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../html/cadastroDeSalas.html">Cadastro de Salas</a></li>
+                    <li><a class="dropdown-item" href="../html/cadastroDeAlunos.html">Cadastro de Alunos</a></li>
+                    <li><a class="dropdown-item" href="../html/cadastroDeCursos.html">Cadastro de Cursos</a></li>
+                    <li><a class="dropdown-item" href="../html/cadastroDeTurmas.html">Cadastro de Turmas</a></li>
+                    <li><a class="dropdown-item" href="../html/cadastroDeInstrutores.html">Cadastro de Instrutores</a></li>
+                </ul>
             </div>
 
-        </div>
+            </div>
+          </div>
     </main>
     <footer>
         <div class="fixo bg-body-tertiary">
             <h3>Desenvolvido por Mark Treinamentos</h3>
         </div>
     </footer>
-    <script src="../js/cadastroTurmas.js"></script>
 </body>
 
 </html>
