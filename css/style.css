@@ -46,7 +46,7 @@ h1{
 
 .container2{
     max-width: 900px;
-    margin-top: 300px;
+    margin-top: 110px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -101,4 +101,86 @@ h1{
 
 #espaco{
     margin-bottom: 10px;
+}
+
+.cartao{
+    width: 800px;
+    background-color: grey;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cartao p{
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+.mx-auto{
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+.esquerda{
+    margin-left: 5px;
+    width: 49%;
+}
+
+@media (min-width: 320px) and (max-width: 343.9px){
+    .cartao{
+        width: 95%;
+    }
+}
+
+@media (min-width: 344px) and (max-width: 450px){
+    .cartao{
+        width: 90%;
+    }
+}
+
+@media (min-width: 540px) and (max-width: 820px){
+    .cartao{
+        width: 80%;
+    }
+}
+
+.fixo{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.fixo h3{
+    font-size: 32px;
+}
+
+#botaoSair{
+    width: 100%;
+}
+
+.logo{
+    max-width: 260px;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.meio{
+    max-width: 295px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+}
+
+#botao10{
+    font-size: 32px;
 }
