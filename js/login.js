@@ -1,55 +1,128 @@
-// Fornece acesso ao elemento do formulario.
-const formulario = document.getElementById('formulario');
-// Recuperam dados do localStorage para usuarios e senha e convertem em objetos javascript, se os dados não existirem no localStorage, arrays vazios serão usados como valores padrão.
+// Recupera dados do localStorage para nome, email, usuários e senhas
+const nome = JSON.parse(localStorage.getItem('nome') || '[]');
+const emailUsuario = JSON.parse(localStorage.getItem('email') || '[]');
 const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-const senha = JSON.parse(localStorage.getItem('senha') || '[]');
-// Cria uma variavel condicaoValidacao e atribui a ela o valor de false
+const senhas = JSON.parse(localStorage.getItem('senhas') || '[]');
+
+const cadastroBtn = document.getElementById('cadastro');
+const loginBtn = document.getElementById('login');
+const container = document.getElementById('container');
+const loginForm = document.getElementById('loginForm');
+const cadastroForm = document.getElementById('cadastroForm');
+
+// Adiciona eventos para alternar entre os formulários de cadastro e login
+cadastroBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
+});
+
+// Variáveis de controle
+let condicaoNome = false, condicaoEmail = false, condicaoUsuarios = false, condicaoSenha = false;
 let condicaoValidacao = false;
-// Exibe no console os usuários cadastrados e as senhas cadastradas
-console.log(`Usuários cadastrados: ${usuarios}`);
-console.log(`Senha: ${senha}`);
-// Função para validar o cadastro
+
+// Função para cadastrar um novo usuário
+function cadastrarUsuario() {
+    const nomeUsuario = document.getElementById('nomeCompleto').value;
+    const usuario = document.getElementById('cadastroUsuario').value;
+    const email = document.getElementById('email').value;
+    const senhaUsuario = document.getElementById('cadastroSenha').value;
+
+    // Verificações de duplicidade
+    if (usuarios.includes(usuario)) {
+        condicaoUsuarios = false;
+        alert('Usuário já cadastrado');
+    } else {
+        condicaoUsuarios = true;
+    }
+
+    if (emailUsuario.includes(email)) {
+        condicaoEmail = false;
+        alert('Email já cadastrado');
+    } else {
+        condicaoEmail = true;
+    }
+
+    if (nomeUsuario !== '' && condicaoUsuarios && condicaoEmail) {
+        nome.push(nomeUsuario);
+        usuarios.push(usuario);
+        emailUsuario.push(email);
+        senhas.push(senhaUsuario);
+
+        localStorage.setItem('nome', JSON.stringify(nome));
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        localStorage.setItem('email', JSON.stringify(emailUsuario));
+        localStorage.setItem('senhas', JSON.stringify(senhas));
+
+        alert('Usuário cadastrado com sucesso!');
+        document.getElementById('nomeCompleto').value = '';
+        document.getElementById('cadastroUsuario').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('cadastroSenha').value = '';
+    }
+}
+
+// Função para validar o login
 function validarCadastro() {
-  // Esta linha de código busca o valor do elemento com id usuarioValido e o armazena em uma variável constante chamada usuario
-  const usuario = document.getElementById('usuarioValido').value;
-  // Esta linha de código busca o valor do elemento com id senhaValida e o armazena em uma variável constante chamada senhaValida
-  const senhaValida = document.getElementById('senhaValida').value;
-  // Verifica se o usuario estiver incluso no array usuarios e senhaValida estiver incluso no array de senha 
-  if(usuarios.includes(usuario) && senha.includes(senhaValida)){
-    // Se a condição anterior for verdadeira exibe no console que o usuário e a senha existem
-    console.log('Usuário entrou');
-    // Verifica se o indice do usuário no array usuarios é igual ao indice da senhaValida no array senha
-    if(usuarios.indexOf(usuario) === senha.indexOf(senhaValida)){
-      // Se a condição anterior for verdade exibe no console que a senha é desse usuario e muda a condicaoValidacao para verdade
-      console.log('A senha é desse Usuário');
-      condicaoValidacao = true;
-    // Se a condição for falsa ele entra aqui
-    }else{
-      // Se entrar na condição anterior quer dizer que a senha não é daquele usuário e a condicação de validação continua false
-      console.log('A senha não é desse Usuário');
-      condicaoValidacao = false;
+    const usuario = document.getElementById('loginUsuario').value;
+    const senhaValida = document.getElementById('loginSenha').value;
+
+    if (usuarios.includes(usuario) && senhas.includes(senhaValida)) {
+        if (usuarios.indexOf(usuario) === senhas.indexOf(senhaValida)) {
+            condicaoValidacao = true;
+        } else {
+            condicaoValidacao = false;
+        }
+    } else {
+        condicaoValidacao = false;
+    }
+
+    document.getElementById('loginUsuario').value = '';
+    document.getElementById('loginSenha').value = '';
+}
+
+// Evento de enviar o formulário de login
+loginForm.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    validarCadastro();
+
+    if (condicaoValidacao === true) {
+        window.open('menu.html');// Abrir a página de menu após o login ser efetuado.
+    } else {
+        alert('Usuário ou Senha incorretos!');
+    }
+});
+
+// Evento de enviar o formulário de cadastro
+cadastroForm.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    cadastrarUsuario();
+});
+
+console.log(`Usuários Cadastrados: ${usuarios}`)
+console.log(`Senhas: ${senhas}`)
+
+console.log(`Nome: ${nome}`)
+console.log(`Email Cadastrado: ${emailUsuario}`)
+console.log(`Tamanho do Email: ${emailUsuario.length}`)
+console.log(`Usuarios: ${usuarios}`)
+console.log(`Senhas: ${senhas}`)
+
+// Função debug/teste para remover itens do array
+function removerItem() {
+    localStorage.removeItem('nome');
+    localStorage.removeItem('usuarios');
+    localStorage.removeItem('email');
+    localStorage.removeItem('senhas');
+    const valorRemovido = localStorage.getItem('nome');
+    const valorRemovido2 = localStorage.getItem('usuarios');
+    const valorRemovido3 = localStorage.getItem('email');
+    const valorRemovido4 = localStorage.getItem('senhas');
+    if (valorRemovido === null && valorRemovido2 === null && valorRemovido3 === null && valorRemovido4 === null) {
+      console.log('Item removido com sucesso!');
+    } else {
+      console.log('Erro ao remover o item.');
     }
   }
-
-  // Aqui "limpa" o valor de usuarioValido e senhaValida
-  document.getElementById('usuarioValido').value = '';
-
-  document.getElementById('senhaValida').value = '';
-  
-}
-// Evento de enviar o formulario
-formulario.addEventListener('submit', function (evento) {
-  // Controla o fluxo dos eventos
-  evento.preventDefault();
-  // Cama a função validarCadastro para que ela seja executada
-  validarCadastro();
-  // Verifica se a condiçãoValidação é verdadeira
-  if(condicaoValidacao === true){
-    // Se a condição anterior for verdadeira ele muda de página
-    window.location.href = 'menu.html';
-  // Se a condição não for verdadeira ela entra aqui
-  }else{
-    // Se a condição não for verdadeira ele dispara um alert dizendo que o usuário ou senha estão incorretos
-    alert('Usuário ou Senha incorreto!');
-  }
-})

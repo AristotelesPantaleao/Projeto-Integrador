@@ -38,7 +38,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         const elementoCard = document.createElement('div');
         elementoCard.className = 'card';
         elementoCard.id = 'salaLivre';
-        elementoCard.style.width = '18rem'
+        elementoCard.style.width = '18rem';
         elementoCard.setAttribute('data-card-id', `${indice + 1}`);
         // Adiciona esse elemento no miniContainer
         miniContainer.appendChild(elementoCard);
@@ -56,26 +56,28 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         const h5 = document.createElement('h5');
         h5.className = 'card-title';
         h5.id = 'centralizar';
-        h5.textContent = `Sala ${indice + 1}`
+        h5.textContent = `Sala ${indice + 1}`;
         // Adiciona esse elemento no cardBody
         cardBody.appendChild(h5);
         // Cria o elemento div com classe
-        const div = document.createElement('div')
+        const div = document.createElement('div');
         div.className = 'form-floating';
         // Adiciona div no cardBody
-        cardBody.appendChild(div)
+        cardBody.appendChild(div);
         // Cria o elemento select com class style id e atributo
         const select = document.createElement('select');
         select.className = 'form-select';
+        select.required = true;
         select.style.marginBottom = '10px';
         select.id = `opcao-instrutor-${indice + 1}`;
-        select.setAttribute('aria-label', 'Floating label select example')
+        select.setAttribute('aria-label', 'Floating label select example');
         // Adiciona o elemento select ao elemento div
-        div.appendChild(select)
+        div.appendChild(select);
         // Cria o elemento option com text content e um valor ja verdadeiro
         const option = document.createElement('option');
-        option.selected = true
-        option.textContent = 'Selecione o Instrutor';
+        option.selected = true;
+        option.disabled = true;
+        // option.textContent = 'Selecione o Instrutor';
         // Adiciona o elemento option ao elemento select
         select.appendChild(option);
         // Cria no select todas as opções de nomeInstrutor
@@ -89,7 +91,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         }
         // Cria o label do select
         const labelDoSelect = document.createElement('label');
-        labelDoSelect.setAttribute('for', 'floatingSelect')
+        labelDoSelect.setAttribute('for', 'floatingSelect');
         labelDoSelect.textContent = 'Escolha o Instrutor';
         // ADiciona o elemento labelDoSelect ao elemento div
         div.appendChild(labelDoSelect);
@@ -97,6 +99,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         const select2 = document.createElement('select');
         select2.className = 'form-select';
         select2.style.marginBottom = '10px';
+        select2.required = true;
         select2.id = `opcao-curso-${indice + 1}`;
         select2.setAttribute('arial-label', 'Floating label select example');
         // Adiciona o elemento select2 a div
@@ -104,7 +107,8 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         // Cria o elemento option2 com text content e um valor ja verdadeiro
         const option2 = document.createElement('option');
         option2.selected = true;
-        option2.textContent = 'Selecione o Curso';
+        option2.disabled = true;
+        // option2.textContent = 'Selecione o Curso';
         // Adiciona o elemento option2 ao elemento select2
         select2.appendChild(option2);
         // Cria no select2 todas as opções de nomeDoCurso;
@@ -117,7 +121,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         }
         // Cria o label do select2
         const labeldoSelect2 = document.createElement('label');
-        labeldoSelect2.setAttribute('for', 'floatingSelect')
+        labeldoSelect2.setAttribute('for', 'floatingSelect');
         labeldoSelect2.textContent = 'Escolha o Curso';
         // Define a posição do textContent no lugar certo
         labeldoSelect2.style.top = select2.offsetTop + 'px';
@@ -133,6 +137,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         // Cria o elemento input com type e id
         const input = document.createElement('input');
         input.type = 'date';
+        input.required = true;
         input.id = `data-${indice + 1}`;
         input.style.marginLeft = '5px';
         // Adiciona o elemento input ao cardBody
@@ -150,12 +155,13 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         // Cria o elemento input2 com type e id
         const input2 = document.createElement('input');
         input2.type = 'time';
+        input2.required = true;
         input2.id = `hora-${indice + 1}`;
         input2.style.marginLeft = '3px';
         // Adiciona o elemento input2 ao cardBody
         cardBody.appendChild(input2);
         // Cria o elemento br2
-        const br2 = document.createElement('br')
+        const br2 = document.createElement('br');
         // Adiciona o elemento br2 ao cardBody
         cardBody.appendChild(br2);
         // Cria o elemento label3
@@ -167,18 +173,20 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         // Cria o elemento input3 com type e id
         const input3 = document.createElement('input');
         input3.type = 'time';
+        input3.required = true;
         input3.id = `horaFinal-${indice + 1}`;
         input3.style.marginLeft = '11px';
         // Adiciona o elemento input3 ao cardBody
         cardBody.appendChild(input3);
         // Cria o elemento br3
-        const br3 = document.createElement('br')
+        const br3 = document.createElement('br');
         // Adiciona o elemento br3 ao cardBody
         cardBody.appendChild(br3);
         // Cria o elemento select com classe style id e atributo
         const select3 = document.createElement('select');
         select3.className = 'form-select';
         select3.style.marginBottom = '10px';
+        select3.required = true;
         select3.id = `opcao-local-${indice + 1}`;
         select3.setAttribute('arial-label', 'Floating label select example');
         // Adiciona o elemento select3 a div
@@ -186,7 +194,8 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         // Cria o elemento option3 com text content e um valor ja verdadeiro
         const option3 = document.createElement('option');
         option3.selected = true;
-        option3.textContent = 'Selecione o Local';
+        option3.disabled = true;
+        // option3.textContent = 'Selecione o Local';
         // Adiciona o elemento option3 ao elemento select2
         select3.appendChild(option3);
         // Cria no select2 todas as opções de localDaSala;
@@ -194,12 +203,12 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             const nome = localDaSala[indice];
             const opcao = document.createElement('option');
             opcao.value = nome;
-            opcao.textContent = nome
+            opcao.textContent = nome;
             select3.appendChild(opcao);
         }
         // Cria o label do select3
         const labelDoSelect3 = document.createElement('label');
-        labelDoSelect3.setAttribute('for', 'floatingSelect')
+        labelDoSelect3.setAttribute('for', 'floatingSelect');
         labelDoSelect3.textContent = 'Escolha o Local';
         // Define a posição do textContent no lugar certo.
         labelDoSelect3.style.top = select3.offsetTop + 'px';
@@ -211,13 +220,15 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         select4.className = 'form-select';
         select4.style.marginBottom = '10px';
         select4.id = `opcao-status-${indice + 1}`;
+        select4.required = true;
         select4.setAttribute('arial-label', 'Floating label select example');
         // Adiciona o elemento select4 a div
         div.appendChild(select4);
         // Cria o elemento option2 com text content e um valor ja verdadeiro
         const option4 = document.createElement('option');
         option4.selected = true;
-        option4.textContent = 'Selecione o Status da sala';
+        option4.disabled = true;
+        // option4.textContent = 'Selecione o Status da sala';
         // Adiciona o elemento option4 ao elemento select4
         select4.appendChild(option4);
         // Cria no select4 todas as opções de opcoes;
@@ -225,12 +236,12 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             const nome = opcoes[indice];
             const opcao = document.createElement('option');
             opcao.value = nome;
-            opcao.textContent = nome
+            opcao.textContent = nome;
             select4.appendChild(opcao);
         }
         // Cria o label do select4
         const labelDoSelect4 = document.createElement('label');
-        labelDoSelect4.setAttribute('for', 'floatingSelect')
+        labelDoSelect4.setAttribute('for', 'floatingSelect');
         labelDoSelect4.textContent = 'Escolha o Status';
         // Define a posição do textContent no lugar certo
         labelDoSelect4.style.top = select4.offsetTop + 'px';
@@ -254,7 +265,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         // Recebe opcaoStatus com base no indice de cada card como parâmetro e se não existir retorna um Array vazio.
         const arrayStatus = JSON.parse(localStorage.getItem(`opcaoStatus${indice + 1}`) || '[]');
         // Exibe no console o card e os arrays daquele card
-        console.log(`Card ${indice + 1}`)
+        console.log(`Card ${indice + 1}`);
         console.log(`Opção Instrutor ${indice + 1}: ${arrayInstrutor}`);
         console.log(`Opção Curso ${indice + 1}: ${arrayCurso}`);
         console.log(`Opção Local ${indice + 1}: ${arrayLocal}`);
@@ -325,22 +336,22 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
                 }
             }
         }
-        // Salva um array chamado arrayInstrutor no localStorage convertendo-o para o formato JSON
-        function salvarInstrutorArray() {
-            localStorage.setItem(`opcaoInstrutor${indice + 1}`, JSON.stringify(arrayInstrutor));
-        }
-        // Salva um array chamado arrayCUrso no localStorage convertendo-o para o formato JSON
-        function salvarCursoArray() {
-            localStorage.setItem(`opcaoCurso${indice + 1}`, JSON.stringify(arrayCurso));
-        }
-        // Salva um array chamado arrayLocal no localStorage convertendo-o para o formato JSON
-        function salvarLocalArray() {
-            localStorage.setItem(`opcaoLocal${indice + 1}`, JSON.stringify(arrayLocal));
-        }
-        // Salva um array chamado arrayStatus no localStorage convertendo-o para o formato JSON
-        function salvarStatusArray() {
-            localStorage.setItem(`opcaoStatus${indice + 1}`, JSON.stringify(arrayStatus));
-        }
+        // // Salva um array chamado arrayInstrutor no localStorage convertendo-o para o formato JSON
+        // function salvarInstrutorArray() {
+        //     localStorage.setItem(`opcaoInstrutor${indice + 1}`, JSON.stringify(arrayInstrutor));
+        // }
+        // // Salva um array chamado arrayCUrso no localStorage convertendo-o para o formato JSON
+        // function salvarCursoArray() {
+        //     localStorage.setItem(`opcaoCurso${indice + 1}`, JSON.stringify(arrayCurso));
+        // }
+        // // Salva um array chamado arrayLocal no localStorage convertendo-o para o formato JSON
+        // function salvarLocalArray() {
+        //     localStorage.setItem(`opcaoLocal${indice + 1}`, JSON.stringify(arrayLocal));
+        // }
+        // // Salva um array chamado arrayStatus no localStorage convertendo-o para o formato JSON
+        // function salvarStatusArray() {
+        //     localStorage.setItem(`opcaoStatus${indice + 1}`, JSON.stringify(arrayStatus));
+        // }
         // Realiza as seguitnes funções quando o botão é clicado
         botao.addEventListener('click', function () {
             // Chama a função adicionarOpcaoInstrutor
@@ -352,13 +363,13 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             // Chama a função adicionarOpcaoStatus
             adicionarOpcaoStatus();
             // Chama a função salvarInstrutorArray
-            salvarInstrutorArray();
-            // Chama a função salvarCursoArray
-            salvarCursoArray();
-            // Chama a função salvarLocalArray
-            salvarLocalArray();
-            // Chama a função salvarStatusArray
-            salvarStatusArray();
+            // salvarInstrutorArray();
+            // // Chama a função salvarCursoArray
+            // salvarCursoArray();
+            // // Chama a função salvarLocalArray
+            // salvarLocalArray();
+            // // Chama a função salvarStatusArray
+            // salvarStatusArray();
             // Exibe um alert com base na sala de que as opções foram salvas.
             alert(`Sala ${indice + 1} salvo com sucesso!`);
         })
@@ -466,10 +477,10 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             let horaCompleta = `${horas}:${minutos}`; // Horas e minutos atuais
             let dataAtual = `${ano}-0${mes}-${dia}`;
 
-            console.log('Data:', data)
+            console.log('Data:', data);
             console.log('Valor Salvo 5:', valorSalvo5);
-            console.log('Ano', ano)
-            console.log('Mês', mes)
+            console.log('Ano', ano);
+            console.log('Mês', mes);
             console.log('Dia', dia); // Exibe apenas o dia da data atual
             console.log('Horas:', horas) // Exibe apenas a hora da data atual
             console.log("Minutos:", minutos); // Exibe apenas os minutos da data atual
@@ -483,7 +494,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             }
 
             if (dataAtual === valorSalvo5) {
-                console.log('entrou aqui')
+                console.log('entrou aqui');
                 // Converte horaCompleta para uma string ( texto ) e verifica se ele é maior ou igual ao valorSalvo6 e se o valorSalvo4 é estritamente igual a Sala Agendada
                 if (horaCompleta.toString() >= valorSalvo6 && valorSalvo4 === 'Sala Agendada') {
                     // Se a condição de cima for verdadeira muda o valor de valorSalvo4 mudando a cor do card de amarelo para vermelho, indicando que a sala está ocupada.
@@ -505,7 +516,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             console.log('Hora Final', valorSalvo7);
             // Muda o id do elementoCard com base no valorSalvo4
             if (valorSalvo4 === 'Sala Livre') {
-                elementoCard.id = 'salaLivre'
+                elementoCard.id = 'salaLivre';
             } else if (valorSalvo4 === 'Sala Agendada') {
                 elementoCard.id = 'salaAgendada';
             } else if (valorSalvo4 === 'Sala Ocupada') {
@@ -559,8 +570,3 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
 
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', function (evento) {
-    evento.preventDefault()
-})

@@ -33,8 +33,8 @@ function cadastrarSala() {
     // Fornece acesso ao elemento do codigoDaSalaError
     const codigoDaSalaError = document.getElementById('codigoDaSalaError');
     // Verifica se a codigoDaSala foi cadastrado e retorna uma mensagem de erro durante 3 segundos
-    if (JSON.parse(localStorage.getItem('codigoDaSala')) !== null) {
-        codigoDaSalaError.textContent = 'Código já cadastrada'
+    if (JSON.parse(localStorage.getItem('codigoDaSala')) !== null && condicaoCodigo === false) {
+        codigoDaSalaError.textContent = 'Código já cadastrado'
 
         setTimeout(() => {
             codigoDaSalaError.textContent = '';
