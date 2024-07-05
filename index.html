@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/telaDeLogin.css">
+    <title>Login e Cadastro</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="cadastroForm">
+                <h1>Crie Sua Conta</h1>
+                <input type="text" id="nomeCompleto" placeholder="Nome Completo" required>
+                <input type="text" id="cadastroUsuario" placeholder="Usuário" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="cadastroSenha" placeholder="Senha" required>
+                <button type="submit" id="cadastroBtn">Cadastrar</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <div class="loginLogo">
+                <img src="../logo/logo.png" alt="">
+            </div>
+            <form id="loginForm">
+                <h1>Login</h1>
+                <input type="text" id="loginUsuario" placeholder="Usuário" required>
+                <input type="password" id="loginSenha" placeholder="Senha" required>
+                <button type="submit" id="loginBtn">Entrar</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bem-vindo!</h1>
+                    <p>Faça seu login aqui.</p>
+                    <button id="login">Entrar</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Primeiro Acesso?</h1>
+                    <p>Faça aqui seu cadastro.</p>
+                    <button id="cadastro">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
