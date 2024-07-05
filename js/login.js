@@ -89,7 +89,7 @@ loginForm.addEventListener('submit', function (evento) {
     validarCadastro();
 
     if (condicaoValidacao === true) {
-        window.open('../html/menu.html');// Abrir a página de menu após o login ser efetuado.
+        window.open('./html/menu.html');// Abrir a página de menu após o login ser efetuado.
     } else {
         alert('Usuário ou Senha incorretos!');
     }
