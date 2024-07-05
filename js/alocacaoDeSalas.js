@@ -314,7 +314,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             // Exibe no console o status selecionado
             // console.log(`Status: ${opcaoStatus}`);
             // Verifica se o status selecionado é estritamente diferente da opção padrao do select
-            if (opcaoStatus !== 'Selecione o Status da sala') {
+            //if (opcaoStatus !== 'Selecione o Status da sala') {
                 // Se a condição de cima for verdadeira ele verifica se a opcaoStatus é estritamente igual a Sala livre
                 if (opcaoStatus === 'Sala Livre') {
                     // Se a condição de cima for verdadeira ele muda o id do elementoCard para salaLivre mudando a cor do card para verde
@@ -334,7 +334,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
                     // Adiciona ao arrayStatus a opcaoStatus
                     arrayStatus.push(opcaoStatus);
                 }
-            }
+            //}
         }
         // Salva um array chamado arrayInstrutor no localStorage convertendo-o para o formato JSON
         function salvarInstrutorArray() {
