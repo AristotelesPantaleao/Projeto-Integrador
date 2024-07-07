@@ -2,7 +2,7 @@
 Projeto Integrador do SENAI - Protótipo Sujo
 Link do protótipo: https://aristotelespantaleao.github.io/Projeto-Integrador/
 
-Passo a Passo de como utilizar o Protótipo:
+# Passo a Passo de como utilizar o Protótipo:
 
 Na página inicial temos a página de login e cadastro, se você não tiver cadastrado nada clique em cadastrar e preencha os campos: Nome Completo, Usuário, Email e Senha, após preencher esses campos clique no botão Cadastrar, depois clique no botão de Entrar para voltar para a parte de login.
 
