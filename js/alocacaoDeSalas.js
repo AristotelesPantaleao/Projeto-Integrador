@@ -315,25 +315,25 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             // console.log(`Status: ${opcaoStatus}`);
             // Verifica se o status selecionado é estritamente diferente da opção padrao do select
             //if (opcaoStatus !== 'Selecione o Status da sala') {
-                // Se a condição de cima for verdadeira ele verifica se a opcaoStatus é estritamente igual a Sala livre
-                if (opcaoStatus === 'Sala Livre') {
-                    // Se a condição de cima for verdadeira ele muda o id do elementoCard para salaLivre mudando a cor do card para verde
-                    elementoCard.id = 'salaLivre';
-                    // Adiciona ao arrayStatus a opcaoStatus
-                    arrayStatus.push(opcaoStatus);
-                    // Verifica se a opcaoStatus é estritamente igual a Sala Agendada
-                } else if (opcaoStatus === 'Sala Agendada') {
-                    // Se a condição de cima for verdadeira ela muda o id do elementoCard para salaAgendada mudando a cor do card para amarelo
-                    elementoCard.id = 'salaAgendada';
-                    // Adiciona ao arrayStatus a opcaoStatus
-                    arrayStatus.push(opcaoStatus);
-                    // Verifica se a opcaoStatus é estritamente igual a Sala Ocupada
-                } else if (opcaoStatus === 'Sala Ocupada') {
-                    // Se a condição de cima for verdadeira ele muda o id do elementoCard para salaOcupada mudando a cor do card para vermelho
-                    elementoCard.id = 'salaOcupada';
-                    // Adiciona ao arrayStatus a opcaoStatus
-                    arrayStatus.push(opcaoStatus);
-                }
+            // Se a condição de cima for verdadeira ele verifica se a opcaoStatus é estritamente igual a Sala livre
+            if (opcaoStatus === 'Sala Livre') {
+                // Se a condição de cima for verdadeira ele muda o id do elementoCard para salaLivre mudando a cor do card para verde
+                elementoCard.id = 'salaLivre';
+                // Adiciona ao arrayStatus a opcaoStatus
+                arrayStatus.push(opcaoStatus);
+                // Verifica se a opcaoStatus é estritamente igual a Sala Agendada
+            } else if (opcaoStatus === 'Sala Agendada') {
+                // Se a condição de cima for verdadeira ela muda o id do elementoCard para salaAgendada mudando a cor do card para amarelo
+                elementoCard.id = 'salaAgendada';
+                // Adiciona ao arrayStatus a opcaoStatus
+                arrayStatus.push(opcaoStatus);
+                // Verifica se a opcaoStatus é estritamente igual a Sala Ocupada
+            } else if (opcaoStatus === 'Sala Ocupada') {
+                // Se a condição de cima for verdadeira ele muda o id do elementoCard para salaOcupada mudando a cor do card para vermelho
+                elementoCard.id = 'salaOcupada';
+                // Adiciona ao arrayStatus a opcaoStatus
+                arrayStatus.push(opcaoStatus);
+            }
             //}
         }
         // Salva um array chamado arrayInstrutor no localStorage convertendo-o para o formato JSON
@@ -489,9 +489,24 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
 
             if (mes < 10 && dia < 10) {
                 dataAtual = `${ano}-0${mes}-0${dia}`;
-            }else if (mes >= 10 && dia >= 10) {
+            } else if (mes < 10 && dia == 10) {
+                dataAtual = `${ano}-0${mes}-${dia}`
+            } else if (mes < 10 && dia > 10) {
+                dataAtual = `${ano}-0${mes}-${dia}`;
+            } else if (mes == 10 && dia == 10) {
+                dataAtual = `${ano}-${mes}-${dia}`;
+            } else if (mes == 10 && dia < 10) {
+                dataAtual = `${ano}-${mes}-0${dia}`;
+            } else if (mes == 10 && dia > 10) {
+                dataAtual = `${ano}-${mes}-${dia}`;
+            } else if (mes > 10 && dia < 10) {
+                dataAtual = `${ano}-${mes}-0${dia}`;
+            } else if (mes > 10 && dia == 10) {
+                dataAtual = `${ano}-${mes}-${dia}`;
+            } else if (mes > 10 && dia > 10) {
                 dataAtual = `${ano}-${mes}-${dia}`;
             }
+
 
             if (dataAtual === valorSalvo5) {
                 // Converte horaCompleta para uma string ( texto ) e verifica se ele é maior ou igual ao valorSalvo6 e se o valorSalvo4 é estritamente igual a Sala Agendada
@@ -561,9 +576,9 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
         //     const valorRemovido12 = localStorage.getItem('armazenarOpcaoInstrutor');
 
         //     if (valorRemovido === null && valorRemovido2 === null && valorRemovido3 === null && valorRemovido4 === null && valorRemovido5 === null && valorRemovido6 === null && valorRemovido7 === null && valorRemovido8 === null && valorRemovido9 === null && valorRemovido10 === null && valorRemovido11 === null && valorRemovido12 === null) {
-        //         // console.log('Item removido com sucesso!');
+        //         console.log('Item removido com sucesso!');
         //     } else {
-        //         // console.log('Erro ao remover o item.');
+        //         console.log('Erro ao remover o item.');
         //     }
         // }
 
