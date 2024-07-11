@@ -475,7 +475,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
             let horas = data.getHours(); // Hora atual
             let minutos = data.getMinutes(); // Minutos atuais
             let horaCompleta = `${horas}:${minutos}`; // Horas e minutos atuais
-            let dataAtual = `${ano}-${mes}-${dia}`;
+            let dataAtual = `${ano}-0${mes}-${dia}`;
 
             // console.log('Data:', data);
             // console.log('Valor Salvo 5:', valorSalvo5);
@@ -501,7 +501,7 @@ if (elementoPrincipal && codigoDaSala.length > 0 && nomeInstrutor.length > 0 && 
                 dataAtual = `${ano}-${mes}-${dia}`;
             } else if (mes > 10 && dia < 10) {
                 dataAtual = `${ano}-${mes}-0${dia}`;
-            } else if (mes > 10 && dia == 10) {
+            } else if (mes > 10 && dia >= 10) {
                 dataAtual = `${ano}-${mes}-${dia}`;
             } else if (mes > 10 && dia > 10) {
                 dataAtual = `${ano}-${mes}-${dia}`;
